@@ -173,7 +173,8 @@ button.bar:hover .bar-hint{color:var(--surface)}
 .blank-in:focus,.blank-in:focus-visible{border-color:var(--ink);outline:none}
 .blank-in::placeholder{color:var(--muted);opacity:1;font-weight:600}
 .was-blank{opacity:.45}
-.hintbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center}
+.hintbtn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;touch-action:none}
+.hintbtn.hold{background:var(--inv);color:var(--inv-ink);border-color:var(--inv)}
 .hintbtn.on{background:var(--inv);color:var(--inv-ink);border-color:var(--inv)}
 .hintbtn:disabled{opacity:.35}
 .toggle{display:flex;background:var(--fill);border-radius:22px;padding:3px}
@@ -220,7 +221,8 @@ button.bar:hover .bar-hint{color:var(--surface)}
 .prog span{font-size:12.5px;font-weight:700;color:var(--muted)}
 .ans{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px}
 .ans.bad{border:1.5px solid var(--ink)}
-.ans.review{border:1.5px solid var(--ink-2)}
+.ans{border:1.5px solid var(--fill-2)!important}
+.ans.review,.ans.bad,.ans.miss{border:1.5px solid var(--ink)!important}
 .ans .st{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;margin-bottom:4px}
 .ans .s{font-size:14.5px;font-weight:700;line-height:1.5}
 .ans .toggle-note{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left;gap:8px;min-height:44px}
@@ -296,6 +298,46 @@ button.bar:hover .bar-hint{color:var(--surface)}
 .fixrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;font-size:14px;padding:4px 0}
 .fixrow .why{font-size:12.5px;color:var(--muted)}
 .ans-sent{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.5}
+/* ---------- wireframe v0.1 반영 ---------- */
+.tbub{align-self:flex-end;width:270px;max-width:86%;border-radius:16px 4px 16px 16px;padding:12px 13px;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.5}
+.tbub.white{background:var(--surface);border:1.5px solid var(--ink-2)}
+.tbub.ok{background:var(--fill);border:1px solid var(--fill-2);color:var(--ink)}
+.tbub.ng{background:var(--muted);color:var(--surface)}
+.tbub .dir{font-size:12.5px;font-weight:800}
+.tbub .hintl{font-size:12.5px;opacity:.7;display:flex;align-items:center;gap:4px}
+.tbub hr{border:0;border-top:1px solid currentColor;opacity:.22;margin:0;width:100%}
+.tbub .kr{font-size:12.5px;opacity:.72}
+.tbub .krb{font-size:15px;font-weight:700}
+.tbub .mine{font-weight:700}
+.tbub .fbt{display:flex;gap:6px;font-size:13px;line-height:1.55}
+.tbub .fbt svg{flex-shrink:0;margin-top:2px}
+.tbub .ansbox{background:var(--surface);color:var(--ink);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:3px}
+.tbub .ansbox .lbl2{font-size:11.5px;font-weight:800;color:var(--muted)}
+.tbub .ansbox .ar{display:flex;align-items:center;gap:6px;font-size:13.5px}
+.tbub .ansbox .ar b{flex:1}
+.tbub .blanks{font-size:14.5px}
+.msg.me .bubble.att-ng{background:var(--line);border-color:var(--line);color:var(--muted)}
+.card.fixed{min-height:272px;justify-content:space-between}
+.cnav{display:flex;align-items:center;gap:6px}
+.cnav .iconbtn{width:36px;height:36px}
+.cnav .iconbtn:disabled{opacity:.25}
+.fb.dark{background:var(--inv);color:var(--inv-ink)}
+.fbcard{border-radius:12px;padding:12px 14px;margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.fbcard.good{background:var(--fill)}
+.fbcard.dark{background:var(--inv);color:var(--inv-ink)}
+.fbcard .st{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:800}
+.fbcard .s{font-size:14.5px;font-weight:700;line-height:1.5}
+.fbcard.dark .chips2 span,.fbcard.dark .chip{border-color:rgba(127,127,127,.6);color:inherit;background:transparent}
+.fbcard.dark .why,.fbcard.dark .rc-lbl,.fbcard.dark .muted{color:inherit;opacity:.65}
+.fbcard.dark .note-body{background:rgba(127,127,127,.25);color:inherit}
+.fbcard.good .note-body{background:var(--surface)}
+.fbcard.dark .ans-sent{border-top-color:rgba(127,127,127,.35)}
+.fbcard .colrow{border-top-color:var(--fill-2)}
+.tin{align-items:flex-end}
+.tin textarea{flex:1;min-width:0;resize:none;border:1px solid var(--fill-2);border-radius:12px;padding:10px 12px;font:inherit;font-size:14px;line-height:20px;height:42px;max-height:122px;overflow-y:auto;background:var(--surface);color:var(--ink);outline:none}
+.tin textarea:focus{border-color:var(--ink)}
+.playing{background:var(--inv)!important;color:var(--inv-ink)!important;border-color:var(--inv)!important}
+.pcard .round.playing{background:var(--inv-ink)!important;color:var(--inv)!important}
 .pin-h{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;text-align:left;min-height:32px}
 .fb-ans{margin-top:10px;padding-top:10px;border-top:1px solid var(--fill-2);display:flex;flex-direction:column;gap:4px}
 .fb-ans-row{display:flex;align-items:center;gap:8px;font-size:14.5px;line-height:1.5}
@@ -313,7 +355,7 @@ button.bar:hover .bar-hint{color:var(--surface)}
 .pager i.on{background:var(--ink);width:18px}
 .pager .iconbtn:disabled{opacity:.25}
 /* core intro grouping */
-.ipat{margin-top:12px}
+.ipat{margin-top:12px;background:var(--fill);border-radius:16px;padding:16px}
 .ipat small{font-size:11.5px;font-weight:800;color:var(--muted)}
 .ipat .p{font-size:17px;font-weight:800;line-height:1.45;margin-top:2px}
 .ipat .p .slot{color:var(--muted);font-weight:700}
@@ -420,7 +462,7 @@ button.bar:hover .bar-hint{color:var(--surface)}
 </div>
 <script>
 (function(){
-const DATA_ALL = {"lessons": [{"coreId": "C001", "coreOrder": 1, "unitId": "U01", "coreTitle": "합의 시작하기", "lessonIntro": "의견이 엇갈릴 때, 먼저 정할 문제를 짚어 대화를 이어가는 표현을 배워요.", "coreScene": "서로 원하는 방향이 달라 회의가 제자리를 맴돌고 있습니다.", "coreTask": "양쪽 입장을 정리하고, 먼저 정해야 할 쟁점을 제안하세요!", "userRole": "프로젝트 매니저", "aiName": "Maya", "aiRole": "HR 담당자", "keyPatternEn": "Let's find common ground on [논의할 문제]", "keyPatternKr": "[논의할 문제]에 대해 합의점을 찾아보죠.", "patternTags": "#해결책 모색 #정중한 제안", "patternBanner": "서로 수용할 수 있는 공통점을 찾자는 부드러운 제안입니다.\non 뒤에는 합의가 필요한 사안이 옵니다.", "patternDesc": "서로 다른 입장을 좁히고 공통의 합의점을 찾도록 제안하는 표현입니다.\n회의나 협상에서 어느 한쪽의 양보를 요구하기보다 양측이 수용할 수 있는 해결책을 모색하며, 대립적인 논의를 협력적인 방향으로 전환하는 역할을 합니다.", "slotGuide": "on 뒤에는 합의가 필요한 사안이 와요. 명사나 -ing 형태로 말해 보세요.", "expandKeywords": "the budget, meeting times, team roles, the launch date", "memo": "비즈니스 파일럿 콘텐츠 - Core 1", "dialog": [{"no": 1, "speaker": "AI", "en": "That meeting didn't get us very far. Operations wants everyone to take turns working weekends, but HR's worried about people's schedules.", "kr": "그 회의는 별 진전이 없었네요. 운영팀은 모두가 돌아가며 주말 근무를 하길 원하는데, 인사팀은 직원들 일정을 걱정하고 있어요."}, {"no": 2, "speaker": "User", "en": "Yeah, I can see why they're stuck.", "kr": "네, 왜 막혔는지 알겠어요."}, {"no": 3, "speaker": "AI", "en": "I know. So where do you think we could start?", "kr": "그러니까요. 그럼 어디서부터 시작하면 좋을까요?"}], "sentences": [{"no": 1, "en": "Let's find common ground on {weekend scheduling}.", "kr": "{주말 근무 일정}에 대해 합의점을 찾아보죠.", "cue": "주말 근무 때문에 두 팀이 계속 부딪혀요. 어떡하죠?"}, {"no": 2, "en": "Let's find common ground on {project timelines}.", "kr": "{프로젝트 일정}에 대해 합의점을 찾아보죠.", "cue": "한 팀은 일정을 늘리자고 하고, 다른 팀은 당기자고 해요."}, {"no": 3, "en": "Let's find common ground on {dividing tasks}.", "kr": "{업무 분담}에 대해 합의점을 찾아보죠.", "cue": "둘 다 그 일을 맡고 싶어 해요. 어떡하죠?"}, {"no": 4, "en": "Let's find common ground on {flexible schedules}.", "kr": "{유연한 근무 일정}에 대해 합의점을 찾아보죠.", "cue": "출퇴근 시간을 자유롭게 하자는 얘기에 의견이 갈려요."}]}, {"coreId": "C002", "coreOrder": 2, "unitId": "U01", "coreTitle": "대안 비교하기", "lessonIntro": "결정을 서두르기보다 두 대안의 장단점을 균형 있게 비교하자고 제안하는 방법을 익혀보세요.", "coreScene": "주말에 인력이 부족한 시간대를 파악하고, 인사 데이터 분석가와 두 가지 방안을 검토합니다.", "coreTask": "두 가지 운영 방식을 균형 있게 비교하자고 제안해보세요.", "userRole": "인력 계획 매니저", "aiName": "Elliot", "aiRole": "인사 데이터 분석가", "keyPatternEn": "We should weigh [대안 A] against [대안 B]", "keyPatternKr": "[대안 A]와 [대안 B]를 비교해봐야겠어요.", "patternTags": "#대안 비교 #신중한 제안", "patternBanner": "결정하기 전에 두 대안의 장단점과 영향을 신중히 따져보자는 제안입니다. \nweigh는 차이만 나열하기보다 어떤 선택이 더 적절한지 평가한다는 뜻을 더합니다.", "patternDesc": "결정하기 전에 두 대안의 장단점을 신중하게 비교하자는 제안입니다. A와 B에는 비교할 대상을 명사구나 동명사구로 넣으며, 두 표현의 형태를 맞추는 것이 자연스럽습니다.", "slotGuide": "against 앞뒤에는 비교할 대안이 들어가요. 명사나 -ing 형태로 말해보세요.", "expandKeywords": "in-house hiring / outsourcing, weekly meetings / daily check-ins, renting equipment / buying equipment, the current tool / a new tool", "memo": "비즈니스 파일럿 콘텐츠 - Core 2", "dialog": [{"no": 1, "speaker": "AI", "en": "I went over the staffing numbers. We're only short on our busiest weekends.", "kr": "인력 현황을 확인해봤는데요. 가장 바쁜 주말에만 인력이 부족하더라고요."}, {"no": 2, "speaker": "User", "en": "Oh, so we don't need extra people every weekend.", "kr": "아, 그럼 매주 추가 인력이 필요한 건 아니네요."}, {"no": 3, "speaker": "AI", "en": "Exactly. Maybe a full rotation isn't our only option.", "kr": "맞아요. 전원 순환근무 말고도 방법이 있을 수 있겠네요."}], "sentences": [{"no": 1, "en": "We should weigh {staff rotation} against {volunteer shifts}.", "kr": "{순환 배정}과 {자발적 근무 신청 방식}을 비교해봐야겠어요.", "cue": "주말 근무를 순번으로 돌릴지, 신청을 받을지 못 정하겠어요."}, {"no": 2, "en": "We should weigh {online training} against {in-person training}.", "kr": "{온라인 교육}과 {대면 교육}을 비교해봐야겠어요.", "cue": "신입 교육을 온라인으로 할지 대면으로 할지 의견이 나뉘어요."}, {"no": 3, "en": "We should weigh {local suppliers} against {overseas suppliers}.", "kr": "{국내 공급업체}와 {해외 공급업체}를 비교해봐야겠어요.", "cue": "국내 업체는 빠른데 해외 업체가 더 싸요. 어쩌죠?"}, {"no": 4, "en": "We should weigh {brief meetings} against {email updates}.", "kr": "{짧은 회의}와 {이메일 업데이트}를 비교해봐야겠어요.", "cue": "진행 상황 공유를 회의로 할지 메일로 할지 모르겠어요."}]}, {"coreId": "C003", "coreOrder": 3, "unitId": "U01", "coreTitle": "근거를 가지고 방안 제시하기", "lessonIntro": "근거를 바탕으로 실행 가능한 다음 조치를 추천하는 방법을 익혀보세요.", "coreScene": "주말 인력 수요와 자원자 확보 실적을 바탕으로, 인력 분석 매니저와 운영 방안을 논의합니다.", "coreTask": "확인된 근거를 바탕으로 실행 방향을 제안해보세요.", "userRole": "사업장 운영 매니저", "aiName": "Nina", "aiRole": "인력 분석 매니저", "keyPatternEn": "Based on that, I'd [실행할 조치].", "keyPatternKr": "그 점을 고려하면, 저는 [실행할 조치]하겠어요.", "patternTags": "#근거 기반 제안 #부드러운 권고", "patternBanner": "앞서 확인한 사실을 바로 다음 제안의 근거로 연결하는 표현입니다.\n I'd는 확정된 지시가 아니라 자신의 판단에 따른 권고로 들리게 합니다.", "patternDesc": "I'd는 I would의 축약형으로, 뒤에 start with a trial처럼 동사원형으로 시작하는 조치가 옵니다. that은 직전에 공유한 정보나 결과를 가리킵니다.", "slotGuide": "I'd 뒤에는 앞으로의 선택지를 동사 형태로 넣어요.", "expandKeywords": "run a pilot first, hire temporary staff, adjust the shift schedule, ask for volunteers", "memo": "비즈니스 파일럿 콘텐츠 - Core 3", "dialog": [{"no": 1, "speaker": "AI", "en": "The numbers look good. Our regular weekend team covers most weekends.", "kr": "인력 현황은 괜찮아요. 평소 주말에는 기존 주말 근무팀만으로 충분하거든요."}, {"no": 2, "speaker": "User", "en": "That's good. But what about the really busy ones?", "kr": "다행이네요. 그런데 특히 바쁜 주말에는 어떻게 하죠?"}, {"no": 3, "speaker": "AI", "en": "Right. So what would you suggest?", "kr": "그러게요. 그럼 어떻게 하면 좋을까요?"}], "sentences": [{"no": 1, "en": "Based on that, I'd {keep the weekend team and add volunteers}.", "kr": "그 점을 고려하면, 저는 {기존 주말 근무팀을 유지하고 자원자를 추가}하겠어요.", "cue": "평소엔 주말팀으로 충분한데, 바쁜 주말만 부족해요. 어떻게 할까요?"}, {"no": 2, "en": "Based on that, I'd {start with a trial}.", "kr": "그 점을 고려하면, 저는 {시범 운영부터 시작}하겠어요.", "cue": "새 근무 방식이 효과 있을지 아직 데이터가 부족해요."}, {"no": 3, "en": "Based on that, I'd {bring in extra help}.", "kr": "그 점을 고려하면, 저는 {추가 인력을 투입}하겠어요.", "cue": "다음 달 주문량이 평소의 두 배가 될 거래요. 어떡하죠?"}, {"no": 4, "en": "Based on that, I'd {move the deadline to next week}.", "kr": "그 점을 고려하면, 저는 {마감을 다음 주로 조정}하겠어요.", "cue": "테스트에서 버그가 예상보다 많이 나왔어요. 일정은 어쩌죠?"}]}, {"coreId": "C004", "coreOrder": 1, "unitId": "U02", "coreTitle": "주문에 문제가 있다고 알리기", "lessonIntro": "문제가 생긴 원인을 추측하기보다, 먼저 어떤 부분을 확인해야 하는지 알려주세요.", "coreScene": "레스토랑에서 주문과 다른 파스타를 받고, 식당 직원과 주문 내용을 확인합니다.", "coreTask": "받은 파스타가 주문과 다른 것 같다고 알려보세요.", "userRole": "손님", "aiName": "Sofia", "aiRole": "식당 직원", "keyPatternEn": "I think there's been a mix-up with [잘못된 부분].", "keyPatternKr": "[잘못된 부분]에 착오가 있는 것 같아요.", "patternTags": "#착오 알리기 #완곡한 지적", "patternBanner": "상대의 잘못을 단정하지 않으면서 주문이나 예약 등에 착오가 있음을 알리는 표현입니다.\nI think는 단정적인 어조를 줄이고, mix-up은 누구의 책임인지보다 발생한 혼선에 초점을 맞춥니다.", "patternDesc": "주문이나 예약 등에 문제가 생겼을 때 착오가 있음을 부드럽게 알리는 표현입니다. with 뒤에는 착오가 발생한 대상을 나타내는 명사구가 옵니다.", "slotGuide": "with 뒤에는 착오가 발생한 대상을 나타내는 명사구가 옵니다.", "expandKeywords": "our order, my drink, the bill, the delivery time", "memo": "일상 파일럿 콘텐츠 - Core 4", "dialog": [{"no": 1, "speaker": "AI", "en": "Here's your pasta. Enjoy!", "kr": "주문하신 파스타 나왔습니다. 맛있게 드세요!"}, {"no": 2, "speaker": "User", "en": "Oh, excuse me, could you check something for us?", "kr": "저기, 죄송한데 한 가지 확인해주실 수 있을까요?"}, {"no": 3, "speaker": "AI", "en": "Sure. Is something wrong with the order?", "kr": "물론이죠. 주문하신 음식에 문제가 있나요?"}], "sentences": [{"no": 1, "en": "I think there's been a mix-up with {this pasta}.", "kr": "{이 파스타}가 잘못 나온 것 같아요.", "cue": "어, 이 파스타 우리가 시킨 거 맞아요?"}, {"no": 2, "en": "I think there's been a mix-up with {our reservation time}.", "kr": "{예약 시간}에 착오가 있는 것 같아요.", "cue": "분명 7시로 예약했는데 8시로 돼 있대요."}, {"no": 3, "en": "I think there's been a mix-up with {our seating request}.", "kr": "{자리 요청 사항}에 착오가 있는 것 같아요.", "cue": "창가 자리로 부탁했는데 안쪽 자리로 안내받았어요."}, {"no": 4, "en": "I think there's been a mix-up with {our check}.", "kr": "{계산서}에 착오가 있는 것 같아요.", "cue": "계산서에 우리가 안 시킨 메뉴가 들어가 있어요."}]}, {"coreId": "C005", "coreOrder": 2, "unitId": "U02", "coreTitle": "원래 주문한 메뉴 설명하기", "lessonIntro": "메뉴 이름이 맞더라도 크기나 재료가 다를 수 있습니다. 주문할 때 선택한 옵션까지 함께 확인해보세요.", "coreScene": "다른 파스타가 나왔다는 것을 알린 뒤, 식당 직원과 원래 주문한 메뉴를 확인합니다.", "coreTask": "버섯 파스타를 주문했으며 해산물 파스타는 주문하지 않았다고 말해보세요.", "userRole": "손님", "aiName": "Elliot", "aiRole": "식당 직원", "keyPatternEn": "We ordered [원래 주문했던 것], not [잘못 나온 것].", "keyPatternKr": "저희는 [잘못 나온 것]이 아니라 [원래 주문했던 것]을 주문했어요.", "patternTags": "#주문 확인 #명확한 정정", "patternBanner": "원래 주문과 실제 제공된 항목을 직접 대비해 무엇을 바로잡아야 하는지 알려주는 표현입니다.\nnot은 잘못 나온 항목을 분명히 짚어, 단순히 원하는 메뉴만 다시 말하는 것과 구별됩니다.", "patternDesc": "원래 주문한 항목과 잘못 나온 항목을 구분해 설명하는 표현입니다. 두 빈칸에는 비교할 항목을 나타내는 명사구가 오며, not 뒤에는 실제로 주문하지 않은 항목을 넣습니다.", "slotGuide": "두 빈칸에는 비교할 항목을 나타내는 명사구가 오며, not 뒤에는 실제로 주문하지 않은 항목을 넣습니다.", "expandKeywords": "a large pizza / a medium one, iced coffee / hot coffee, the chicken salad / the Caesar salad, fries / mashed potatoes", "memo": "일상 파일럿 콘텐츠 - Core 5", "dialog": [{"no": 1, "speaker": "AI", "en": "I heard there was an issue with your pasta.", "kr": "파스타에 문제가 있다고 들었습니다."}, {"no": 2, "speaker": "User", "en": "Yeah, I don't think this is what we ordered.", "kr": "네, 이건 저희가 주문한 음식이 아닌 것 같아요."}, {"no": 3, "speaker": "AI", "en": "Oh, sorry about that. Which pasta did you order?", "kr": "아, 죄송합니다. 어떤 파스타를 주문하셨나요?"}], "sentences": [{"no": 1, "en": "We ordered {the mushroom pasta}, not {the seafood pasta}.", "kr": "저희는 {해산물 파스타}가 아니라 {버섯 파스타}를 주문했어요.", "cue": "버섯 파스타를 시켰는데 해산물 파스타가 나왔어요."}, {"no": 2, "en": "We ordered {the platter for three}, not {the one for two}.", "kr": "저희는 {2인분}이 아니라 {3인분 모둠 요리}를 주문했어요.", "cue": "세 명이라 3인분을 시켰는데 양이 2인분 같아요."}, {"no": 3, "en": "We ordered {sparkling water}, not {still water}.", "kr": "저희는 {일반 생수}가 아니라 {탄산수}를 주문했어요.", "cue": "탄산수를 시켰는데 그냥 물이 나왔어요."}, {"no": 4, "en": "We ordered {our steaks medium rare}, not {well done}.", "kr": "저희는 스테이크를 {웰던}이 아니라 {미디엄 레어}로 주문했어요.", "cue": "미디엄 레어로 부탁했는데 바싹 익혀서 나왔어요."}]}, {"coreId": "C006", "coreOrder": 3, "unitId": "U02", "coreTitle": "빠진 메뉴 부드럽게 요청하기", "lessonIntro": "이미 주문한 사이드 메뉴가 빠졌다면, 새 주문으로 추가되기 전에 기존 주문 내역에 포함돼 있는지 확인해보세요", "coreScene": "식당 직원과 아직 나오지 않은 사이드 메뉴를 확인합니다.", "coreTask": "주문했지만 나오지 않은 사이드 샐러드도 가져다 달라고 요청해보세요.", "userRole": "손님", "aiName": "Riley", "aiRole": "식당 직원", "keyPatternEn": "Could we get [항목], too?", "keyPatternKr": "[항목]도 가져다주실 수 있을까요?", "patternTags": "#추가 요청 #정중한 부탁", "patternBanner": "이미 진행 중인 대화에 다른 필요 사항을 덧붙여 부탁하는 표현입니다. \nCould we는 요청을 완곡하게 만들고, too는 앞선 요청에 하나를 더한다는 점을 드러냅니다.", "patternDesc": "이미 요청한 것에 필요한 항목을 추가로 부탁하는 표현입니다. get 뒤에는 요청할 항목을 나타내는 명사구가 오며, 문장 끝의 too는 추가 요청이라는 의미를 더합니다.", "slotGuide": "get 뒤에는 요청할 항목을 나타내는 명사구가 옵니다.", "expandKeywords": "some more water, extra napkins, another fork, the dessert menu", "memo": "일상 파일럿 콘텐츠 - Core 6", "dialog": [{"no": 1, "speaker": "AI", "en": "I'm sorry about the pasta. I'll have the kitchen remake it.", "kr": "파스타는 죄송합니다. 주방에 다시 만들어달라고 하겠습니다."}, {"no": 2, "speaker": "User", "en": "Thanks. Actually, there's one more thing.", "kr": "감사합니다. 사실 한 가지가 더 있어요."}, {"no": 3, "speaker": "AI", "en": "Of course. What else can I get for you?", "kr": "물론이죠. 그 밖에 더 필요한 것은 없으신가요?"}], "sentences": [{"no": 1, "en": "Could we get {our side salad}, too?", "kr": "{사이드 샐러드}도 가져다주실 수 있을까요?", "cue": "그러고 보니 사이드 샐러드가 아직 안 나왔네요."}, {"no": 2, "en": "Could we get {a high chair}, too?", "kr": "{유아용 의자}도 가져다주실 수 있을까요?", "cue": "아이가 앉을 만한 자리가 마땅치 않네요."}, {"no": 3, "en": "Could we get {a to-go box}, too?", "kr": "{남은 음식을 담을 포장 용기}도 가져다주실 수 있을까요?", "cue": "음식이 많이 남았는데 그냥 두고 가기 아까워요."}, {"no": 4, "en": "Could we get {separate checks}, too?", "kr": "{따로 나눈 계산서}도 가져다주실 수 있을까요?", "cue": "오늘은 각자 먹은 만큼 계산하기로 했잖아요."}]}], "units": [{"unitId": "U01", "unitOrder": 1, "unitTitle": "의견 조율하기", "unitIntro": "익힌 내용을 활용하여 두 팀 모두 실행할 수 있는 주말 근무 방안을 찾아보세요.", "unitContext": "운영팀과 인사팀은 주말 근무 방식에 의견이 다릅니다.", "unitMission": "필요한 주말 인력을 확보하면서 직원들의 일정에 지장을 덜 주는 방안을 제안해보세요.", "userRole": "프로젝트 매니저", "aiName": "Maya", "aiRole": "동료", "memo": "역할은 프로토타입 기준 임시값", "turns": [{"no": 1, "speaker": "AI", "coreId": "", "en": "We still haven't settled the weekend schedule. Operations wants a full rotation, but HR's worried about everyone's plans.", "kr": "아직 주말 근무 방식을 결정하지 못했네요. 운영팀은 전원 순환근무를 원하고, 인사팀은 직원들의 개인 일정을 걱정하고 있어요.", "hint": "", "must": ""}, {"no": 2, "speaker": "Target", "coreId": "C001", "en": "Let's find common ground on weekend shifts.", "kr": "주말 근무 일정에 대해 합의점을 찾아보죠.", "hint": "weekend shifts", "must": "weekend"}, {"no": 3, "speaker": "AI", "coreId": "", "en": "I hope so. Our numbers show we only need extra staff on the busiest weekends.", "kr": "그랬으면 좋겠네요. 자료를 보면 가장 바쁜 주말에만 추가 인력이 필요해요.", "hint": "", "must": ""}, {"no": 4, "speaker": "Target", "coreId": "C002", "en": "We should weigh rotation against volunteer shifts.", "kr": "전원 순환근무와 자원자 근무를 비교해봐야겠어요.", "hint": "rotation / volunteer shifts", "must": "rotation, volunteer"}, {"no": 5, "speaker": "AI", "coreId": "", "en": "Good idea. We usually get enough volunteers when we post those extra shifts early.", "kr": "좋은 생각이에요. 추가 근무를 일찍 공지하면 보통 자원자가 충분히 모여요.", "hint": "", "must": ""}, {"no": 6, "speaker": "Target", "coreId": "C003", "en": "Based on that, I'd keep the weekend team and add volunteers.", "kr": "그 점을 고려하면, 저는 기존 주말 근무팀을 유지하고 자원자를 추가하겠어요.", "hint": "keep the weekend team / add volunteers", "must": "keep, volunteer"}]}, {"unitId": "U02", "unitOrder": 2, "unitTitle": "식당 주문 문제 해결하기", "unitIntro": "익힌 내용을 활용하여 주문과 다른 음식이 나왔을 때, 무엇이 다른지 설명하고 빠진 메뉴도 요청해보세요.", "unitContext": "식당에서 주문한 것과 다른 파스타가 나왔고 사이드 샐러드도 빠졌습니다.", "unitMission": "주문 오류를 설명하고 빠진 메뉴를 요청해보세요.", "userRole": "식당 손님", "aiName": "Daniel", "aiRole": "식당 직원", "memo": "일상 파일럿 콘텐츠 - Unit 2", "turns": [{"no": 1, "speaker": "AI", "coreId": "", "en": "How's everything looking over here?", "kr": "음식은 다 괜찮으세요?", "hint": "", "must": ""}, {"no": 2, "speaker": "Target", "coreId": "C004", "en": "I think there's been a mix-up with this pasta.", "kr": "이 파스타가 잘못 나온 것 같아요.", "hint": "this pasta", "must": "pasta"}, {"no": 3, "speaker": "AI", "coreId": "", "en": "Oh, sorry about that. Which pasta did you order?", "kr": "아, 죄송해요. 어떤 파스타를 주문하셨나요?", "hint": "", "must": ""}, {"no": 4, "speaker": "Target", "coreId": "C005", "en": "We ordered the mushroom pasta, not the seafood pasta.", "kr": "저희는 해산물 파스타가 아니라 버섯 파스타를 주문했어요.", "hint": "the mushroom pasta / the seafood pasta", "must": "mushroom, seafood"}, {"no": 5, "speaker": "AI", "coreId": "", "en": "Got it. I'll get the right one started. Was there anything else?", "kr": "알겠습니다. 바로 다시 준비해드릴게요. 또 필요한 건 없으세요?", "hint": "", "must": ""}, {"no": 6, "speaker": "Target", "coreId": "C006", "en": "Could we get our side salad, too?", "kr": "사이드 샐러드도 가져다주실 수 있을까요?", "hint": "our side salad", "must": "salad"}, {"no": 7, "speaker": "AI", "coreId": "", "en": "Of course. I'll bring that right out.", "kr": "물론이죠. 바로 가져다드릴게요.", "hint": "", "must": ""}]}], "gloss": {"C001": [{"en": "find common ground", "kr": "합의점을 찾다", "forms": ["find common ground"]}, {"en": "get very far", "kr": "크게 진전하다", "forms": ["get us very far", "get very far"]}, {"en": "take turns", "kr": "돌아가며 하다", "forms": ["take turns"]}, {"en": "be stuck", "kr": "막혀서 진전이 없다", "forms": ["stuck"]}, {"en": "weekend scheduling", "kr": "주말 근무 일정 짜기", "forms": ["weekend scheduling"]}, {"en": "project timeline", "kr": "프로젝트 일정", "forms": ["project timelines", "project timeline"]}, {"en": "divide tasks", "kr": "업무를 나누다", "forms": ["dividing tasks", "divide tasks"]}, {"en": "flexible schedule", "kr": "유연한 근무 일정", "forms": ["flexible schedules", "flexible schedule"]}], "C002": [{"en": "weigh A against B", "kr": "A와 B를 견주어 따져 보다", "forms": ["weigh"]}, {"en": "go over", "kr": "검토하다, 꼼꼼히 살펴보다", "forms": ["went over", "go over"]}, {"en": "staffing numbers", "kr": "인력 현황", "forms": ["staffing numbers"]}, {"en": "be short on", "kr": "~이 부족하다", "forms": ["short on"]}, {"en": "full rotation", "kr": "전원 순환 근무", "forms": ["full rotation"]}, {"en": "staff rotation", "kr": "인력 순환 배치", "forms": ["staff rotation"]}, {"en": "volunteer shift", "kr": "자원 근무", "forms": ["volunteer shifts", "volunteer shift"]}, {"en": "in-person training", "kr": "대면 교육", "forms": ["in-person training"]}, {"en": "overseas supplier", "kr": "해외 공급업체", "forms": ["overseas suppliers", "overseas supplier"]}, {"en": "email update", "kr": "이메일로 하는 진행 상황 공유", "forms": ["email updates", "email update"]}], "C003": [{"en": "based on that", "kr": "그걸 바탕으로, 그 점을 고려하면", "forms": ["Based on that"]}, {"en": "cover", "kr": "(인원·업무를) 감당하다", "forms": ["covers", "cover"]}, {"en": "bring in extra help", "kr": "추가 인력을 투입하다", "forms": ["bring in extra help"]}, {"en": "start with a trial", "kr": "시범 운영부터 시작하다", "forms": ["start with a trial"]}, {"en": "move the deadline", "kr": "마감일을 옮기다", "forms": ["move the deadline"]}, {"en": "add volunteers", "kr": "자원자를 추가하다", "forms": ["add volunteers"]}], "C004": [{"en": "reservation time", "kr": "예약 시간", "forms": ["reservation time"]}, {"en": "seating request", "kr": "자리 요청 사항", "forms": ["seating request"]}, {"en": "check", "kr": "계산서", "forms": ["check"]}], "C005": [{"en": "platter for [숫자]", "kr": "[숫자]인분 모둠 요리", "forms": ["the platter for three", "the one for two"]}, {"en": "sparkling water", "kr": "탄산수", "forms": ["sparkling water"]}, {"en": "still water", "kr": "생수", "forms": ["still water"]}], "C006": [{"en": "high chair", "kr": "유아용 의자", "forms": ["high chair"]}, {"en": "to-go box", "kr": "(테이크아웃용) 포장 용기", "forms": ["to-go box"]}, {"en": "separate check", "kr": "개별 계산서, 따로 하는 계산", "forms": ["separate check", "separate checks"]}]}};
+const DATA_ALL = {"lessons": [{"coreId": "C001", "coreOrder": 1, "unitId": "U01", "coreTitle": "합의 시작하기", "lessonIntro": "의견이 엇갈릴 때, 먼저 정할 문제를 짚어 대화를 이어가는 표현을 배워요.", "coreScene": "서로 원하는 방향이 달라 회의가 제자리를 맴돌고 있습니다.", "coreTask": "양쪽 입장을 고려해 합의점을 함께 찾아보자고 제안해보세요.", "userRole": "프로젝트 매니저", "aiName": "Maya", "aiRole": "HR 담당자", "keyPatternEn": "Let's find common ground on [논의할 문제]", "keyPatternKr": "[논의할 문제]에 대해 합의점을 찾아보죠.", "patternTags": "#해결책 모색 #정중한 제안", "patternBanner": "on 뒤에는 합의할 사안을 나타내는 명사구를 넣습니다.", "patternDesc": "서로 다른 입장을 좁히고 공통의 합의점을 찾도록 제안하는 표현입니다.\n회의나 협상에서 어느 한쪽의 양보를 요구하기보다 양측이 수용할 수 있는 해결책을 모색하며, 대립적인 논의를 협력적인 방향으로 전환하는 역할을 합니다.", "slotGuide": "on 뒤에는 합의가 필요한 사안이 와요. 명사나 -ing 형태로 말해 보세요.", "expandKeywords": "the budget, meeting times, team roles, the launch date", "memo": "비즈니스 파일럿 콘텐츠 - Core 1", "dialog": [{"no": 1, "speaker": "AI", "en": "I’d like everyone to take turns working weekends.", "kr": "주말 근무는 모두가 돌아가면서 했으면 좋겠어요."}, {"no": 2, "speaker": "User", "en": "I see why, but some people need a set schedule.", "kr": "무슨 말씀인지는 알겠지만, 일정이 고정되어야 하는 직원들도 있어요."}, {"no": 3, "speaker": "AI", "en": "True. We need a plan that works for both sides.", "kr": "맞아요. 양쪽 모두에게 맞는 방안이 필요하겠네요."}], "sentences": [{"no": 1, "en": "Let's find common ground on {weekend scheduling}.", "kr": "{주말 근무 일정}에 대해 합의점을 찾아보죠.", "cue": "주말 근무 때문에 두 팀이 계속 부딪혀요. 어떡하죠?"}, {"no": 2, "en": "Let's find common ground on {project timelines}.", "kr": "{프로젝트 일정}에 대해 합의점을 찾아보죠.", "cue": "한 팀은 일정을 늘리자고 하고, 다른 팀은 당기자고 해요."}, {"no": 3, "en": "Let's find common ground on {dividing tasks}.", "kr": "{업무 분담}에 대해 합의점을 찾아보죠.", "cue": "둘 다 그 일을 맡고 싶어 해요. 어떡하죠?"}, {"no": 4, "en": "Let's find common ground on {flexible schedules}.", "kr": "{유연한 근무 일정}에 대해 합의점을 찾아보죠.", "cue": "출퇴근 시간을 자유롭게 하자는 얘기에 의견이 갈려요."}]}, {"coreId": "C002", "coreOrder": 2, "unitId": "U01", "coreTitle": "대안 비교하기", "lessonIntro": "두 가지 대안의 장단점을 함께 따져보자고 제안하는 표현을 배워요.", "coreScene": "주말 인력 부족 문제를 해결하기 위해 두 가지 운영 방안을 검토하고 있습니다.", "coreTask": "두 운영 방안의 장단점을 함께 따져보자고 제안해보세요.", "userRole": "인력 계획 매니저", "aiName": "Elliot", "aiRole": "인사 데이터 분석가", "keyPatternEn": "We should weigh [대안 A] against [대안 B]", "keyPatternKr": "[대안 A]와 [대안 B]를 비교해봐야겠어요.", "patternTags": "#대안 비교 #신중한 제안", "patternBanner": "A와 B에는 비교할 두 대안을 넣습니다. 명사구나 동명사구로 형태를 맞추면 자연스럽습니다.", "patternDesc": "결정하기 전에 두 대안의 장단점과 영향을 신중히 따져보자는 제안입니다. \nweigh는 차이만 나열하기보다 어떤 선택이 더 적절한지 평가한다는 뜻을 더합니다.", "slotGuide": "against 앞뒤에는 비교할 대안이 들어가요. 명사나 -ing 형태로 말해보세요.", "expandKeywords": "hiring / outsourcing, weekly meetings / daily check-ins, renting equipment / buying equipment, the current tool / a new tool", "memo": "비즈니스 파일럿 콘텐츠 - Core 2", "dialog": [{"no": 1, "speaker": "AI", "en": "We're still short-staffed on busy weekends.", "kr": "바쁜 주말에는 여전히 인력이 부족해요."}, {"no": 2, "speaker": "User", "en": "Could we ask for volunteers instead of rotating everyone?", "kr": "모두 돌아가며 근무하는 대신 지원자를 받아보는 건 어떨까요?"}, {"no": 3, "speaker": "AI", "en": "Maybe, but what if we don't get enough people?", "kr": "그럴 수도 있지만, 지원자가 충분히 모이지 않으면 어떡하죠?"}], "sentences": [{"no": 1, "en": "We should weigh {staff rotation} against {volunteer shifts}.", "kr": "{순환 배정}과 {자발적 근무 신청 방식}을 비교해봐야겠어요.", "cue": "주말 근무를 순번으로 돌릴지, 신청을 받을지 못 정하겠어요."}, {"no": 2, "en": "We should weigh {online training} against {in-person training}.", "kr": "{온라인 교육}과 {대면 교육}을 비교해봐야겠어요.", "cue": "신입 교육을 온라인으로 할지 대면으로 할지 의견이 나뉘어요."}, {"no": 3, "en": "We should weigh {local suppliers} against {overseas suppliers}.", "kr": "{국내 공급업체}와 {해외 공급업체}를 비교해봐야겠어요.", "cue": "국내 업체는 빠른데 해외 업체가 더 싸요. 어쩌죠?"}, {"no": 4, "en": "We should weigh {brief meetings} against {email updates}.", "kr": "{짧은 회의}와 {이메일 업데이트}를 비교해봐야겠어요.", "cue": "진행 상황 공유를 회의로 할지 메일로 할지 모르겠어요."}]}, {"coreId": "C003", "coreOrder": 3, "unitId": "U01", "coreTitle": "근거로 방안 제시하기", "lessonIntro": "확인한 근거를 바탕으로 적절한 실행 방향을 제안하는 표현을 배워요.", "coreScene": "주말 인력 현황과 자원자 확보 실적을 확인한 뒤 운영 방안을 논의하고 있습니다.", "coreTask": "확인한 근거를 바탕으로 적절한 운영 방향을 제안해보세요.", "userRole": "사업장 운영 매니저", "aiName": "Nina", "aiRole": "인력 분석 매니저", "keyPatternEn": "Based on that, I'd [실행할 조치].", "keyPatternKr": "그 점을 고려하면, 저는 [실행할 조치]하겠어요.", "patternTags": "#근거 기반 제안 #부드러운 권고", "patternBanner": "that은 앞서 언급한 정보나 결과를 가리킵니다. I'd 뒤에는 실행할 조치를 동사원형으로 넣습니다.", "patternDesc": "앞서 확인한 사실을 바로 다음 제안의 근거로 연결하는 표현입니다.\nI'd는 확정된 지시가 아니라 자신의 판단에 따른 권고로 들리게 합니다.", "slotGuide": "I'd 뒤에는 앞으로의 선택지를 동사 형태로 말해보세요.", "expandKeywords": "run a test, adjust the budget, ask for feedback, update the plan", "memo": "비즈니스 파일럿 콘텐츠 - Core 3", "dialog": [{"no": 1, "speaker": "AI", "en": "Our regular weekend team can handle most weekends.", "kr": "평소 주말에는 기존 근무 인력으로 충분해요."}, {"no": 2, "speaker": "User", "en": "Okay, but what about the really busy ones?", "kr": "다행이네요. 그런데 특히 바쁜 주말에는 어떻게 하죠?"}, {"no": 3, "speaker": "AI", "en": "We usually get enough volunteers if we post the shifts early.", "kr": "근무 일정을 일찍 공지하면 보통 지원자가 충분히 모여요."}], "sentences": [{"no": 1, "en": "Based on that, I'd {keep the weekend team and add volunteers}.", "kr": "그 점을 고려하면, 저는 {기존 주말 근무팀을 유지하고 자원자를 추가}하겠어요.", "cue": "평소엔 주말팀으로 충분한데, 바쁜 주말만 부족해요. 어떻게 할까요?"}, {"no": 2, "en": "Based on that, I'd {start with a trial}.", "kr": "그 점을 고려하면, 저는 {시범 운영부터 시작}하겠어요.", "cue": "새 근무 방식이 효과 있을지 아직 데이터가 부족해요."}, {"no": 3, "en": "Based on that, I'd {bring in extra help}.", "kr": "그 점을 고려하면, 저는 {추가 인력을 투입}하겠어요.", "cue": "다음 달 주문량이 평소의 두 배가 될 거래요. 어떡하죠?"}, {"no": 4, "en": "Based on that, I'd {move the deadline to next week}.", "kr": "그 점을 고려하면, 저는 {마감을 다음 주로 조정}하겠어요.", "cue": "테스트에서 버그가 예상보다 많이 나왔어요. 일정은 어쩌죠?"}]}, {"coreId": "C004", "coreOrder": 1, "unitId": "U02", "coreTitle": "주문에 문제가 있다고 알리기", "lessonIntro": "주문과 다른 음식이 나왔을 때, 착오가 있는 것 같다고 알리는 표현을 배워요.", "coreScene": "레스토랑에서 주문한 것과 다른 파스타가 나왔습니다.", "coreTask": "파스타 주문에 착오가 있는 것 같다고 직원에게 알려보세요.", "userRole": "손님", "aiName": "Sofia", "aiRole": "식당 직원", "keyPatternEn": "I think there's been a mix-up with [잘못된 부분].", "keyPatternKr": "[잘못된 부분]에 착오가 있는 것 같아요.", "patternTags": "#착오 알리기 #완곡한 지적", "patternBanner": "with 뒤에는 착오가 발생한 주문이나 예약 등의 대상을 넣습니다.", "patternDesc": "상대의 잘못을 단정하지 않으면서 주문이나 예약 등에 착오가 있음을 알리는 표현입니다.\nI think는 단정적인 어조를 줄이고, mix-up은 누구의 책임인지보다 발생한 혼선에 초점을 맞춥니다.", "slotGuide": "with 뒤에는 착오가 발생한 대상을 나타내는 명사구가 옵니다.", "expandKeywords": "our order, my drink, the bill, the delivery time", "memo": "일상 파일럿 콘텐츠 - Core 4", "dialog": [{"no": 1, "speaker": "AI", "en": "Here's your pasta. Enjoy!", "kr": "주문하신 파스타 나왔습니다. 맛있게 드세요!"}, {"no": 2, "speaker": "User", "en": "Oh, excuse me, could you check something for us?", "kr": "저기, 죄송한데 한 가지 확인해주실 수 있을까요?"}, {"no": 3, "speaker": "AI", "en": "Sure. Is something wrong with the order?", "kr": "물론이죠. 주문하신 음식에 문제가 있나요?"}], "sentences": [{"no": 1, "en": "I think there's been a mix-up with {this pasta}.", "kr": "{이 파스타}가 잘못 나온 것 같아요.", "cue": "어, 이 파스타 우리가 시킨 거 맞아요?"}, {"no": 2, "en": "I think there's been a mix-up with {our reservation time}.", "kr": "{예약 시간}에 착오가 있는 것 같아요.", "cue": "분명 7시로 예약했는데 8시로 돼 있대요."}, {"no": 3, "en": "I think there's been a mix-up with {our seating request}.", "kr": "{자리 요청 사항}에 착오가 있는 것 같아요.", "cue": "창가 자리로 부탁했는데 안쪽 자리로 안내받았어요."}, {"no": 4, "en": "I think there's been a mix-up with {our check}.", "kr": "{계산서}에 착오가 있는 것 같아요.", "cue": "계산서에 우리가 안 시킨 메뉴가 들어가 있어요."}]}, {"coreId": "C005", "coreOrder": 2, "unitId": "U02", "coreTitle": "원래 주문한 메뉴 설명하기", "lessonIntro": "주문한 메뉴와 나온 메뉴가 다를 때, 무엇을 주문했는지 분명히 말하는 표현을 배워요.", "coreScene": "파스타가 잘못 나온 것 같아 직원과 주문 내용을 다시 확인하고 있습니다.", "coreTask": "주문한 파스타와 나온 파스타가 어떻게 다른지 설명해보세요.", "userRole": "손님", "aiName": "Elliot", "aiRole": "식당 직원", "keyPatternEn": "We ordered [원래 주문했던 것], not [잘못 나온 것].", "keyPatternKr": "저희는 [잘못 나온 것]이 아니라 [원래 주문했던 것]을 주문했어요.", "patternTags": "#주문 확인 #명확한 정정", "patternBanner": "첫 빈칸에는 실제 주문한 메뉴를, not 뒤에는 주문하지 않은 메뉴를 넣습니다.", "patternDesc": "원래 주문과 실제 제공된 항목을 직접 대비해 무엇을 바로잡아야 하는지 알려주는 표현입니다.\nnot은 잘못 나온 항목을 분명히 짚어, 단순히 원하는 메뉴만 다시 말하는 것과 구별됩니다.", "slotGuide": "두 빈칸에는 비교할 항목을 나타내는 명사구가 오며, not 뒤에는 실제로 주문하지 않은 항목을 넣습니다.", "expandKeywords": "a large pizza / a medium one, iced coffee / hot coffee, the chicken salad / the Caesar salad, fries / mashed potatoes", "memo": "일상 파일럿 콘텐츠 - Core 5", "dialog": [{"no": 1, "speaker": "AI", "en": "I heard there was an issue with your pasta.", "kr": "파스타에 문제가 있다고 들었습니다."}, {"no": 2, "speaker": "User", "en": "Yeah, I don't think this is what we ordered.", "kr": "네, 이건 저희가 주문한 음식이 아닌 것 같아요."}, {"no": 3, "speaker": "AI", "en": "Oh, sorry about that. Which pasta did you order?", "kr": "아, 죄송합니다. 어떤 파스타를 주문하셨나요?"}], "sentences": [{"no": 1, "en": "We ordered {the mushroom pasta}, not {the seafood pasta}.", "kr": "저희는 {해산물 파스타}가 아니라 {버섯 파스타}를 주문했어요.", "cue": "버섯 파스타를 시켰는데 해산물 파스타가 나왔어요."}, {"no": 2, "en": "We ordered {the platter for three}, not {the one for two}.", "kr": "저희는 {2인분}이 아니라 {3인분 모둠 요리}를 주문했어요.", "cue": "세 명이라 3인분을 시켰는데 양이 2인분 같아요."}, {"no": 3, "en": "We ordered {sparkling water}, not {still water}.", "kr": "저희는 {일반 생수}가 아니라 {탄산수}를 주문했어요.", "cue": "탄산수를 시켰는데 그냥 물이 나왔어요."}, {"no": 4, "en": "We ordered {our steaks medium rare}, not {well done}.", "kr": "저희는 스테이크를 {웰던}이 아니라 {미디엄 레어}로 주문했어요.", "cue": "미디엄 레어로 부탁했는데 바싹 익혀서 나왔어요."}]}, {"coreId": "C006", "coreOrder": 3, "unitId": "U02", "coreTitle": "빠진 메뉴 부드럽게 요청하기", "lessonIntro": "주문한 음식이 빠졌을 때, 빠진 메뉴를 정중하게 요청하는 표현을 배워요.", "coreScene": "레스토랑에서 주문한 사이드 샐러드가 아직 나오지 않았습니다.", "coreTask": "빠진 사이드 메뉴도 가져다 달라고 요청해보세요.", "userRole": "손님", "aiName": "Riley", "aiRole": "식당 직원", "keyPatternEn": "Could we get [항목], too?", "keyPatternKr": "[항목]도 가져다주실 수 있을까요?", "patternTags": "#추가 요청 #정중한 부탁", "patternBanner": "get 뒤에는 추가로 요청할 항목을 넣고, too는 문장 끝에서 추가 요청임을 나타냅니다.", "patternDesc": "이미 진행 중인 대화에 다른 필요 사항을 덧붙여 부탁하는 표현입니다. \nCould we는 요청을 완곡하게 만들고, too는 앞선 요청에 하나를 더한다는 점을 드러냅니다.", "slotGuide": "get 뒤에는 요청할 항목을 나타내는 명사구가 옵니다.", "expandKeywords": "some more water, extra napkins, another fork, the dessert menu", "memo": "일상 파일럿 콘텐츠 - Core 6", "dialog": [{"no": 1, "speaker": "AI", "en": "I'm sorry about the pasta. I'll have the kitchen remake it.", "kr": "파스타는 죄송합니다. 주방에 다시 만들어달라고 하겠습니다."}, {"no": 2, "speaker": "User", "en": "Thanks. Actually, there's one more thing.", "kr": "감사합니다. 사실 한 가지가 더 있어요."}, {"no": 3, "speaker": "AI", "en": "Of course. What else can I get for you?", "kr": "물론이죠. 그 밖에 더 필요한 것은 없으신가요?"}], "sentences": [{"no": 1, "en": "Could we get {our side salad}, too?", "kr": "{사이드 샐러드}도 가져다주실 수 있을까요?", "cue": "그러고 보니 사이드 샐러드가 아직 안 나왔네요."}, {"no": 2, "en": "Could we get {a high chair}, too?", "kr": "{유아용 의자}도 가져다주실 수 있을까요?", "cue": "아이가 앉을 만한 자리가 마땅치 않네요."}, {"no": 3, "en": "Could we get {a to-go box}, too?", "kr": "{남은 음식을 담을 포장 용기}도 가져다주실 수 있을까요?", "cue": "음식이 많이 남았는데 그냥 두고 가기 아까워요."}, {"no": 4, "en": "Could we get {separate checks}, too?", "kr": "{따로 나눈 계산서}도 가져다주실 수 있을까요?", "cue": "오늘은 각자 먹은 만큼 계산하기로 했잖아요."}]}], "units": [{"unitId": "U01", "unitOrder": 1, "unitTitle": "의견 조율하기", "unitIntro": "익힌 내용을 활용하여 두 팀 모두 실행할 수 있는 주말 근무 방안을 찾아보세요.", "unitContext": "운영팀과 인사팀은 주말 근무 방식에 의견이 다릅니다.", "unitMission": "필요한 주말 인력을 확보하면서 직원들의 일정에 지장을 덜 주는 방안을 제안해보세요.", "userRole": "프로젝트 매니저", "aiName": "Maya", "aiRole": "동료", "memo": "역할은 프로토타입 기준 임시값", "turns": [{"no": 1, "speaker": "AI", "coreId": "", "en": "We still haven't settled the weekend schedule. Operations wants a full rotation, but HR's worried about everyone's plans.", "kr": "아직 주말 근무 방식을 결정하지 못했네요. 운영팀은 전원 순환근무를 원하고, 인사팀은 직원들의 개인 일정을 걱정하고 있어요.", "hint": "", "must": ""}, {"no": 2, "speaker": "Target", "coreId": "C001", "en": "Let's find common ground on weekend shifts.", "kr": "주말 근무 일정에 대해 합의점을 찾아보죠.", "hint": "weekend shifts", "must": "weekend"}, {"no": 3, "speaker": "AI", "coreId": "", "en": "I hope so. Our numbers show we only need extra staff on the busiest weekends.", "kr": "그랬으면 좋겠네요. 자료를 보면 가장 바쁜 주말에만 추가 인력이 필요해요.", "hint": "", "must": ""}, {"no": 4, "speaker": "Target", "coreId": "C002", "en": "We should weigh rotation against volunteer shifts.", "kr": "전원 순환근무와 자원자 근무를 비교해봐야겠어요.", "hint": "rotation / volunteer shifts", "must": "rotation, volunteer"}, {"no": 5, "speaker": "AI", "coreId": "", "en": "Good idea. We usually get enough volunteers when we post those extra shifts early.", "kr": "좋은 생각이에요. 추가 근무를 일찍 공지하면 보통 자원자가 충분히 모여요.", "hint": "", "must": ""}, {"no": 6, "speaker": "Target", "coreId": "C003", "en": "Based on that, I'd keep the weekend team and add volunteers.", "kr": "그 점을 고려하면, 저는 기존 주말 근무팀을 유지하고 자원자를 추가하겠어요.", "hint": "keep the weekend team / add volunteers", "must": "keep, volunteer"}]}, {"unitId": "U02", "unitOrder": 2, "unitTitle": "식당 주문 문제 해결하기", "unitIntro": "익힌 내용을 활용하여 주문과 다른 음식이 나왔을 때, 무엇이 다른지 설명하고 빠진 메뉴도 요청해보세요.", "unitContext": "식당에서 주문한 것과 다른 파스타가 나왔고 사이드 샐러드도 빠졌습니다.", "unitMission": "주문 오류를 설명하고 빠진 메뉴를 요청해보세요.", "userRole": "식당 손님", "aiName": "Daniel", "aiRole": "식당 직원", "memo": "일상 파일럿 콘텐츠 - Unit 2", "turns": [{"no": 1, "speaker": "AI", "coreId": "", "en": "How's everything looking over here?", "kr": "음식은 다 괜찮으세요?", "hint": "", "must": ""}, {"no": 2, "speaker": "Target", "coreId": "C004", "en": "I think there's been a mix-up with this pasta.", "kr": "이 파스타가 잘못 나온 것 같아요.", "hint": "this pasta", "must": "pasta"}, {"no": 3, "speaker": "AI", "coreId": "", "en": "Oh, sorry about that. Which pasta did you order?", "kr": "아, 죄송해요. 어떤 파스타를 주문하셨나요?", "hint": "", "must": ""}, {"no": 4, "speaker": "Target", "coreId": "C005", "en": "We ordered the mushroom pasta, not the seafood pasta.", "kr": "저희는 해산물 파스타가 아니라 버섯 파스타를 주문했어요.", "hint": "the mushroom pasta / the seafood pasta", "must": "mushroom, seafood"}, {"no": 5, "speaker": "AI", "coreId": "", "en": "Got it. I'll get the right one started. Was there anything else?", "kr": "알겠습니다. 바로 다시 준비해드릴게요. 또 필요한 건 없으세요?", "hint": "", "must": ""}, {"no": 6, "speaker": "Target", "coreId": "C006", "en": "Could we get our side salad, too?", "kr": "사이드 샐러드도 가져다주실 수 있을까요?", "hint": "our side salad", "must": "salad"}, {"no": 7, "speaker": "AI", "coreId": "", "en": "Of course. I'll bring that right out.", "kr": "물론이죠. 바로 가져다드릴게요.", "hint": "", "must": ""}]}], "gloss": {"C001": [{"en": "find common ground", "kr": "합의점을 찾다", "forms": ["find common ground"]}, {"en": "get very far", "kr": "크게 진전하다", "forms": ["get us very far", "get very far"]}, {"en": "take turns", "kr": "돌아가며 하다", "forms": ["take turns"]}, {"en": "be stuck", "kr": "막혀서 진전이 없다", "forms": ["stuck"]}, {"en": "weekend scheduling", "kr": "주말 근무 일정 짜기", "forms": ["weekend scheduling"]}, {"en": "project timeline", "kr": "프로젝트 일정", "forms": ["project timelines", "project timeline"]}, {"en": "divide tasks", "kr": "업무를 나누다", "forms": ["dividing tasks", "divide tasks"]}, {"en": "flexible schedule", "kr": "유연한 근무 일정", "forms": ["flexible schedules", "flexible schedule"]}], "C002": [{"en": "weigh A against B", "kr": "A와 B를 견주어 따져 보다", "forms": ["weigh"]}, {"en": "go over", "kr": "검토하다, 꼼꼼히 살펴보다", "forms": ["went over", "go over"]}, {"en": "staffing numbers", "kr": "인력 현황", "forms": ["staffing numbers"]}, {"en": "be short on", "kr": "~이 부족하다", "forms": ["short on"]}, {"en": "full rotation", "kr": "전원 순환 근무", "forms": ["full rotation"]}, {"en": "staff rotation", "kr": "인력 순환 배치", "forms": ["staff rotation"]}, {"en": "volunteer shift", "kr": "자원 근무", "forms": ["volunteer shifts", "volunteer shift"]}, {"en": "in-person training", "kr": "대면 교육", "forms": ["in-person training"]}, {"en": "overseas supplier", "kr": "해외 공급업체", "forms": ["overseas suppliers", "overseas supplier"]}, {"en": "email update", "kr": "이메일로 하는 진행 상황 공유", "forms": ["email updates", "email update"]}], "C003": [{"en": "based on that", "kr": "그걸 바탕으로, 그 점을 고려하면", "forms": ["Based on that"]}, {"en": "cover", "kr": "(인원·업무를) 감당하다", "forms": ["covers", "cover"]}, {"en": "bring in extra help", "kr": "추가 인력을 투입하다", "forms": ["bring in extra help"]}, {"en": "start with a trial", "kr": "시범 운영부터 시작하다", "forms": ["start with a trial"]}, {"en": "move the deadline", "kr": "마감일을 옮기다", "forms": ["move the deadline"]}, {"en": "add volunteers", "kr": "자원자를 추가하다", "forms": ["add volunteers"]}], "C004": [{"en": "reservation time", "kr": "예약 시간", "forms": ["reservation time"]}, {"en": "seating request", "kr": "자리 요청 사항", "forms": ["seating request"]}, {"en": "check", "kr": "계산서", "forms": ["check"]}], "C005": [{"en": "platter for [숫자]", "kr": "[숫자]인분 모둠 요리", "forms": ["the platter for three", "the one for two"]}, {"en": "sparkling water", "kr": "탄산수", "forms": ["sparkling water"]}, {"en": "still water", "kr": "생수", "forms": ["still water"]}], "C006": [{"en": "high chair", "kr": "유아용 의자", "forms": ["high chair"]}, {"en": "to-go box", "kr": "(테이크아웃용) 포장 용기", "forms": ["to-go box"]}, {"en": "separate check", "kr": "개별 계산서, 따로 하는 계산", "forms": ["separate check", "separate checks"]}]}};
 const DATA = DATA_ALL.lessons;
 const CUE_NAME = 'Jamie';
 const COURSE = {title:'파일럿팅용 샘플 코스', tag:'프로토타입'};
@@ -484,6 +526,7 @@ const P = {
   up:'<path d="M6 15l6-6 6 6"/>',
   send:'<path d="M5 12h14M13 6l6 6-6 6"/>',
   play:'<path d="M8 5l11 7-11 7z"/>',
+  pause:'<rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/>',
   flame:'<path d="M12 22c4 0 7-2.8 7-7 0-4.5-3.5-7.5-5-11-1 3-3 4.5-4 6-1-1-1.5-2-1.5-3C6 9 5 11.5 5 15c0 4.2 3 7 7 7z"/>',
   bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10.3 20a2 2 0 0 0 3.4 0"/>',
   lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
@@ -501,7 +544,7 @@ const KEY='spep-pilot-proto-v1';
 function load(){ try{ const v=JSON.parse(localStorage.getItem(KEY)||'null'); if(v&&Array.isArray(v.done)) return v; }catch(e){} return {done:[],streak:0,last:''}; }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S.store)); }catch(e){} }
 function lessonState(){
-  return {start:Date.now(),
+  return {start:Date.now(), resume:0,
     g:{done:false, fb:null, ko:{}, blur:{}, shown:0, typing:false, fresh:-1, inp:[]},
     ex:{i:0, ko:true, typed:'', done:[], fb:[], voiced:[]},
     b:{i:0, ko:true, hints:[0,0,0,0], done:[], fb:[], inp:[[],[],[],[]], voiced:[]},
@@ -509,13 +552,16 @@ function lessonState(){
 }
 const S = Object.assign({view:'home', stage:0, li:0, mode:'voice', rec:false, recSec:0, timer:null, seq:0, unitOpen:true, store:load(), _last:null}, lessonState());
 
-function speak(t){ try{ if(!('speechSynthesis' in window)) return; speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t.replace(/’/g,"'")); u.lang='en-US'; u.rate=.9; speechSynthesis.speak(u);}catch(e){} }
+/* 재생 중인 스피커 버튼은 ❚❚로 바뀌고, 다시 누르면 정지 */
+let playingT=null;
+function markPlaying(t){ document.querySelectorAll('[data-speak]').forEach(b=>{ const on = t!==null && b.dataset.speak===t; if(on===b.classList.contains('playing')) return; b.classList.toggle('playing',on); if(on){ b.dataset.icon=b.innerHTML; b.innerHTML=b.innerHTML.replace(/<svg[\s\S]*?<\/svg>/, ic('pause', b.classList.contains('round')?20:15)); b.setAttribute('aria-label','정지'); } else if(b.dataset.icon!=null){ b.innerHTML=b.dataset.icon; delete b.dataset.icon; b.setAttribute('aria-label','듣기'); } }); }
+function speak(t){ try{ if(!('speechSynthesis' in window)) return; speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t.replace(/’/g,"'")); u.lang='en-US'; u.rate=.9; playingT=t; const end=()=>{ if(playingT===t){ playingT=null; markPlaying(null); } }; u.onend=end; u.onerror=end; speechSynthesis.speak(u); markPlaying(t);}catch(e){} }
 function speakThen(t,cb){
   let fired=false; const f=()=>{ if(fired) return; fired=true; cb(); };
   setTimeout(f, 1500 + t.split(' ').length*520);
   try{ if('speechSynthesis' in window){ speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t.replace(/’/g,"'")); u.lang='en-US'; u.rate=.9; u.onend=f; u.onerror=f; speechSynthesis.speak(u);} }catch(e){}
 }
-function hush(){ try{ speechSynthesis.cancel(); }catch(e){} }
+function hush(){ try{ speechSynthesis.cancel(); }catch(e){} playingT=null; markPlaying(null); }
 function toast(msg){const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('on'),1600);}
 function scrollMain(){const m=document.querySelector('.main'); if(m) m.scrollTop=m.scrollHeight;}
 
@@ -581,7 +627,8 @@ function gBlanks(){
   return words.map((x,wi)=>{
     const k=idx.indexOf(wi);
     if(k<0) return `<span>${esc(x.w)}${x.tail}</span>`;
-    const b = inline ? blankInput('g',k,x.w,S.g.inp[k]||'','',bw(x.w)) : answerable ? blankBtn(k,bw(x.w)) : `<span class="bar" style="width:${bw(x.w)}px"></span>`;
+    const pk = S.g.peek ? x.w : '';
+    const b = inline ? blankInput('g',k,x.w,S.g.inp[k]||'',pk,bw(x.w)) : answerable ? blankBtn(k,bw(x.w),pk) : `<span class="bar" style="width:${bw(x.w)}px"></span>`;
     return x.tail ? `<span style="display:inline-flex;align-items:center">${b}${x.tail}</span>` : b;
   }).join('');
 }
@@ -672,9 +719,10 @@ function bfbHtml(i){
     if(f.note) body+=`<div class="note-body" style="margin-top:8px">${esc(f.note)}</div>`;
     if(f.showAns){ const s0=plain(L().sents[i].en); body+=`<div class="ans-sent"><span class="rc-lbl" style="margin:0">정답 문장</span><span style="flex:1">${recHtml(L(),s0)}</span><button class="chip" data-speak="${esc(s0)}" aria-label="정답 문장 듣기">${ic('speaker',15)}</button></div>`; }
   }
-  return `<div class="ans ${f.kind==='good'?'':f.kind}" style="margin-top:12px" data-fb="${esc('b'+i+'|'+f.title)}"><div class="st">${ic(icon,16)}${esc(f.title)}${f.score?`<span class="muted" style="font-weight:500">· 발음 일치도 ${f.score}%</span>`:''}</div>${body}</div>`;
+  return `<div class="fbcard ${f.kind==='good'?'good':'dark'}" data-fb="${esc('b'+i+'|'+f.title)}"><div class="st">${ic(icon,16)}${esc(f.title)}${f.score?`<span class="muted" style="font-weight:500">· 발음 일치도 ${f.score}%</span>`:''}</div>${body}</div>`;
 }
 function ctaBtn(done){ return done ? `<button class="cta" id="ctabtn" data-a="cnext">다음으로</button>` : `<button class="cta" id="ctabtn" data-a="check" ${canCheck()?'':'disabled'}>정답 확인</button>`; }
+function cnav(i,n){ return `<div class="cnav"><button class="iconbtn" data-a="bprev" aria-label="이전 카드" ${i===0?'disabled':''}>${ic('back',18)}</button><span class="count">${i+1} / ${n}</span><button class="iconbtn" data-a="bfwd" aria-label="다음 카드" ${i===n-1?'disabled':''}><span style="display:grid;transform:scaleX(-1)">${ic('back',18)}</span></button></div>`; }
 function pager(i,n,doneArr){
   return `<div class="pager"><button class="iconbtn" data-a="bprev" aria-label="이전 카드" ${i===0?'disabled':''}>${ic('back',20)}</button><span class="dots" aria-hidden="true">${Array.from({length:n},(_,k)=>`<i class="${k===i?'on':''} ${doneArr[k]?'ok':''}"></i>`).join('')}</span><button class="iconbtn" data-a="bfwd" aria-label="다음 카드" ${i===n-1?'disabled':''}><span style="display:grid;transform:scaleX(-1)">${ic('back',20)}</span></button></div>`;
 }
@@ -779,7 +827,7 @@ function gfbHtml(){
 }
 function fb(f,key=''){
   if(!f) return '';
-  return `<div class="fb ${f.kind==='good'?'':'dash'}" role="status" data-fb="${esc(key+'|'+f.text)}">${ic(f.kind==='good'?'check':'alert',18)}<span>${esc(f.text)}</span></div>`;
+  return `<div class="fb ${f.kind==='good'?'':'dark'}" role="status" data-fb="${esc(key+'|'+f.text)}">${ic(f.kind==='good'?'check':'alert',18)}<span>${esc(f.text)}</span></div>`;
 }
 function dock({hint=false, hintOn=false, hintDisabled=false, voiceLabel='탭하여 녹음', placeholder='영어로 입력해 보세요', value='', sendDisabled=false, locked=false, inline=false, pop='', noSend=false}={}){
   const mode=S.mode;
@@ -787,7 +835,7 @@ function dock({hint=false, hintOn=false, hintDisabled=false, voiceLabel='탭하�
   const center = mode==='voice'
     ? `<div class="center"><button class="rec ${S.rec?'on':''}" data-a="rec" aria-label="${S.rec?'녹음 종료':'녹음 시작'}">${S.rec?stopIc(22):ic('mic',24)}</button><span class="lbl" id="reclbl">${S.rec?`녹음 중 ${S.recSec}초 · 탭하여 종료`:voiceLabel}</span></div>`
     : inline ? (noSend ? `<div class="center"><span class="lbl" style="font-size:13px">빈칸을 눌러 바로 입력하세요</span></div>` : `<div class="center"><button class="submit" data-a="send" id="sendbtn" ${sendDisabled?'disabled':''}>제출</button><span class="lbl">빈칸을 눌러 바로 입력하세요</span></div>`)
-    : `<div class="center"><div class="tin"><label for="tin" style="position:absolute;left:-9999px">답 입력</label><input id="tin" placeholder="${esc(placeholder)}" value="${esc(value)}" autocomplete="off" autocapitalize="off">${noSend?'':`<button data-a="send" id="sendbtn" aria-label="제출" ${sendDisabled?'disabled':''}>${ic('send',20)}</button>`}</div><span class="lbl">${noSend?'입력 후 정답 확인을 눌러 주세요':'Enter로 제출'}</span></div>`;
+    : `<div class="center"><div class="tin"><label for="tin" style="position:absolute;left:-9999px">답 입력</label><textarea id="tin" rows="1" placeholder="${esc(placeholder)}" autocomplete="off" autocapitalize="off" spellcheck="false">${esc(value)}</textarea>${noSend?'':`<button data-a="send" id="sendbtn" aria-label="제출" ${sendDisabled?'disabled':''}>${ic('send',20)}</button>`}</div><span class="lbl">${noSend?'입력 후 정답 확인을 눌러 주세요':'Enter로 제출 · Shift+Enter 줄바꿈'}</span></div>`;
   const right=`<div class="toggle" role="group" aria-label="입력 방식"><button class="${mode==='text'?'on':''}" data-mode="text" aria-label="키보드 입력" aria-pressed="${mode==='text'}">${ic('keyboard',18)}</button><button class="${mode==='voice'?'on':''}" data-mode="voice" aria-label="음성 입력" aria-pressed="${mode==='voice'}">${ic('mic',18)}</button></div>`;
   return `<div class="dock ${locked?'locked':''}" ${locked?'inert':''}>${pop}<div class="dtop">${left}${right}</div>${center}</div>`;
 }
@@ -830,7 +878,7 @@ function intro(){
   return head('레슨 시작하기') + `<div class="main intro">
     <h2>${esc(l.coreTitle)}</h2>
     <div class="ipat"><small>Key Pattern</small><div class="p">${patHtml(l.keyPatternEn)}</div><p>${esc(l.lessonIntro)}</p></div>
-    <div class="isec">상황</div>
+    <div class="isec">Role</div>
     <div class="roles">
       <div class="role"><div class="av me">나</div><div><small>나</small><b>${esc(l.userRole)}</b></div></div>
       <div class="role">${avatar}<div><small>${esc(l.aiName)}</small><b>${esc(l.aiRole)}</b></div></div>
@@ -842,7 +890,7 @@ function intro(){
       <button class="${S.mode==='voice'?'on':''}" data-mode="voice" aria-pressed="${S.mode==='voice'}">${ic('mic',16)}말하기</button>
       <button class="${S.mode==='text'?'on':''}" data-mode="text" aria-pressed="${S.mode==='text'}">${ic('keyboard',16)}입력하기</button>
     </div>
-  </div>` + foot(`<button class="cta" data-go="1">레슨 시작하기</button>`);
+  </div>` + foot(`<button class="cta" data-a="lessonstart">레슨 시작하기</button>`);
 }
 
 function guide(){
@@ -858,14 +906,16 @@ function guide(){
   const dots='<span class="typing" aria-label="입력 중"><i></i><i></i><i></i></span>';
   const typing = g.typing && nxt ? (nxt.who==='me' ? `<div class="msg me"><div class="bubble">${dots}</div></div>` : `<div class="msg">${avatar}<div><div class="who">${esc(l.aiName)}</div><div class="bubble">${dots}</div></div></div>`) : '';
   const s0=l.sents[0];
+  /* 타깃턴 버블: 디렉션(위) → 빈칸 문장 + 국문 → 피드백(아래). 입력 전 흰 배경, 정답 검정, 오답·넘어감 연회색 */
+  const en0=plain(s0.en);
   const target = !ready ? '' : g.done
-    ? (g.userText ? `<div class="msg me"><div style="display:flex;flex-direction:column;align-items:flex-end"><div class="bubble"><div class="en">${esc(g.userText)}</div></div></div></div>` : '')
-    : `<div class="target"><div class="hint-t">빈칸을 채워 문장을 완성해 보세요</div><div class="blanks" id="gblanks">${gBlanks()}</div><div class="muted" style="font-size:12.5px;margin-top:8px">${esc(plain(s0.kr))}</div></div>`;
+    ? `<div class="tbub ${g.correct?'ok':'ng'} new" data-fb="${esc('g|'+(g.fb?g.fb.text:''))}">${g.userText?`<div class="mine">${esc(g.userText)}</div>`:''}<div class="kr">${esc(plain(s0.kr))}</div><hr><div class="fbt">${ic(g.correct?'check':'alert',16)}<span>${esc(g.fb?g.fb.text:'')}</span></div>${g.correct?'':`<div class="ansbox"><span class="lbl2">정답 문장</span><div class="ar"><b>${esc(en0)}</b><button class="chip" data-speak="${esc(en0)}" aria-label="정답 듣기">${ic('speaker',15)}</button></div></div>`}</div>`
+    : `<div class="tbub white"><div class="dir">빈칸을 채워 문장을 완성해 보세요</div><hr><div class="blanks" id="gblanks">${gBlanks()}</div><div class="kr">${esc(plain(s0.kr))}</div></div>`;
   return head(l.coreTitle) + tabs()
     + `<div class="taskbar"><span class="label">Task</span><span>${esc(l.coreTask)}</span></div>`
-    + `<div class="gctl"><div class="in"><button class="chip" data-a="listenall">${ic('play',13,true)}전체 듣기</button><button class="chip ${D.every((_,i)=>g.ko[i])?'on':''}" data-a="koall" aria-pressed="${D.every((_,i)=>g.ko[i])}">전체 자막 보기</button></div></div><div class="main" style="padding-top:56px"><div class="chat">${msgs}${typing}${target}</div>${gfbHtml()}</div>`
-    + dock({inline:true, voiceLabel: ready?'문장 전체를 말해 보세요':'대화를 듣는 중이에요', sendDisabled:!gFilled(), locked:!ready||g.done})
-    + foot(`<div class="row">${g.done?'':`<button class="ghost" data-a="skip">다음 &gt;&gt;</button>`}<button class="cta" data-go="2" ${g.done?'':'disabled'}>Key Pattern 배우기</button></div>`);
+    + `<div class="gctl"><div class="in"><button class="chip" data-a="listenall">${ic('play',13,true)}전체 듣기</button><button class="chip ${D.every((_,i)=>g.ko[i])?'on':''}" data-a="koall" aria-pressed="${D.every((_,i)=>g.ko[i])}">전체 자막 보기</button></div></div><div class="main" style="padding-top:56px"><div class="chat">${msgs}${typing}${target}</div></div>`
+    + dock({inline:true, hint: ready && !g.done, voiceLabel: ready?'문장 전체를 말해 보세요':'대화를 듣는 중이에요', sendDisabled:!gFilled(), locked:!ready||g.done})
+    + foot(`<div class="row">${g.done?'':`<button class="ghost" data-a="skip">넘어가기</button>`}<button class="cta" data-go="2" ${g.done?'':'disabled'}>Key Pattern 배우기</button></div>`);
 }
 
 function pattern(){
@@ -881,15 +931,15 @@ function pattern(){
 
 function examples(){
   const i=S.ex.i, s=L().sents[i], saved=S.bm.has(i), n=L().sents.length, done=!!S.ex.done[i];
-  const card=`<div class="card swipe" data-swipe="1">
+  const card=`<div class="card swipe fixed" data-swipe="1">
     <div class="top"><button class="chip ${S.ex.ko?'on':''}" data-a="exko" aria-pressed="${S.ex.ko}">가/A</button>
       <button class="chip ${saved?'on':''}" data-bm="${i}" aria-label="${saved?'저장 취소':'표현 저장'}" aria-pressed="${saved}">${ic('bookmark',15,saved)}</button></div>
     <div class="en colscope"><span>${enHtml(s.en)}</span></div>
     <div class="kor">${S.ex.ko?krHtml(s.kr):''}</div>
-    <div class="bottom"><button class="round" data-speak="${esc(plain(s.en))}" aria-label="원어민 음성 듣기">${ic('speaker',20)}</button><span class="count">${i+1} / ${n}</span></div>
+    <div class="bottom"><button class="round" data-speak="${esc(plain(s.en))}" aria-label="원어민 음성 듣기">${ic('speaker',20)}</button>${cnav(i,n)}</div>
   </div>`;
   return head(L().coreTitle) + tabs() + pin()
-    + `<div class="main">${card}${pager(i,n,S.ex.done)}${fb(S.ex.fb[i],'ex'+i)}</div>`
+    + `<div class="main">${card}${fb(S.ex.fb[i],'ex'+i)}</div>`
     + dock({placeholder:'문장을 그대로 입력해 보세요', value:S.ex.typed, voiceLabel:'듣고 따라 말해 보세요'})
     + foot(`<button class="cta" data-a="cnext">다음으로</button>`);
 }
@@ -906,15 +956,15 @@ function building(){
     else b=blankBtn(k,Math.max(28,x.w.length*11), ph(x.w));
     return x.tail ? `<span style="display:inline-flex;align-items:center">${b}${x.tail}</span>` : b;
   }).join(' ');
-  const card=`<div class="card swipe" data-swipe="1" ${done?'':'style="border:1.5px solid var(--ink-2)"'}>
+  const card=`<div class="card swipe fixed" data-swipe="1" ${done?'':'style="border:1.5px solid var(--ink-2)"'}>
     <div class="top"><button class="chip ${S.b.ko?'on':''}" data-a="bko" aria-pressed="${S.b.ko}">가/A</button>
       <button class="chip ${saved?'on':''}" data-bm="${i}" aria-label="${saved?'저장 취소':'표현 저장'}" aria-pressed="${saved}">${ic('bookmark',15,saved)}</button></div>
     <div class="en">${shown}</div>
     <div class="kor">${S.b.ko?esc(plain(s.kr)):''}</div>
-    <div class="bottom">${done?`<button class="round" data-speak="${esc(plain(s.en))}" aria-label="원어민 음성 듣기">${ic('speaker',20)}</button>`:''}<span class="count">${i+1} / ${n}</span></div>
+    <div class="bottom">${done?`<button class="round" data-speak="${esc(plain(s.en))}" aria-label="원어민 음성 듣기">${ic('speaker',20)}</button>`:''}${cnav(i,n)}</div>
   </div>`;
   return head(L().coreTitle) + tabs()
-    + `<div class="main">${card}${pager(i,n,S.b.done)}${bfbHtml(i)}</div>`
+    + `<div class="main">${card}${bfbHtml(i)}</div>`
     + dock({inline:true, noSend:true, hint:true, hintDisabled:h>=2, voiceLabel:S.b.voiced[i]?'빈칸을 확인하고 정답 확인을 눌러 주세요':'문장 전체를 말해 보세요'})
     + foot(ctaBtn(done && !dirty));
 }
@@ -933,7 +983,7 @@ function summary(){
 
 function expand(){
   const l=L(), n=S.exp.attempts.length, last=S.exp.attempts[n-1];
-  const lastHtml = last ? `<div class="ans ${last.kind==='good'?'':last.kind}" style="margin-top:12px" data-fb="exp${n}"><div class="st">${ic(last.kind==='good'?'check':last.kind==='bad'?'x':'alert',16)}${last.title}${last.voice?'<span class="muted" style="font-weight:500">· 인식된 문장(데모)</span>':''}</div>${last.kind==='good'?`<div style="display:flex;align-items:center;gap:10px"><div class="s" style="flex:1">${esc(last.s)}</div><button class="round" data-speak="${esc(last.s)}" aria-label="원어민 음성 듣기">${ic('speaker',18)}</button></div>`:`<div class="s">${esc(last.s)}</div>`}<div class="note-body" style="margin-top:8px">${esc(last.note)}</div></div>` : '';
+  const lastHtml = last ? `<div class="fbcard ${last.kind==='good'?'good':'dark'}" data-fb="exp${n}"><div class="st">${ic(last.kind==='good'?'check':last.kind==='bad'?'x':'alert',16)}${last.title}${last.voice?'<span class="muted" style="font-weight:500">· 인식된 문장(데모)</span>':''}</div>${last.kind==='good'?`<div style="display:flex;align-items:center;gap:10px"><div class="s" style="flex:1">${esc(last.s)}</div><button class="round" data-speak="${esc(last.s)}" aria-label="원어민 음성 듣기">${ic('speaker',18)}</button></div>`:`<div class="s">${esc(last.s)}</div>`}<div class="note-body" style="margin-top:8px">${esc(last.note)}</div></div>` : '';
   const pop = S.exp.hint ? `<div class="pop" role="dialog" aria-label="힌트"><div class="pop-h"><b>힌트</b><button class="iconbtn" data-a="hint" aria-label="힌트 닫기" style="width:36px;height:36px">${ic('x',16)}</button></div><p>${esc(l.slotGuide)}</p><span class="muted" style="font-size:12px">아이디어가 없다면 키워드를 골라 보세요.</span><div class="kw">${l.keywords.map(k=>`<button data-kw="${esc(k)}">${esc(k)}</button>`).join('')}</div></div>` : '';
   const card = esc(l.keyPatternEn).replace(/\[[^\]]*\]/g,'<span class="bar" style="width:84px"></span>');
   return head(l.coreTitle,'확장학습') + `<div class="main">
@@ -942,7 +992,7 @@ function expand(){
       <div class="en" style="min-height:0">${card}${/[.!?]$/.test(l.keyPatternEn)?'':'.'}</div>
       <div class="kor">${esc(l.keyPatternKr)}</div></div>
     ${lastHtml}
-  </div>` + dock({pop, hint:true, hintOn:S.exp.hint, placeholder:stem(l).replace(/~/g,'...'), value:S.exp.typed, voiceLabel:'나만의 문장을 말해 보세요'})
+  </div>` + dock({pop, hint:n<10, hintOn:S.exp.hint, placeholder:stem(l).replace(/~/g,'...'), value:S.exp.typed, voiceLabel:n>=10?'10문장을 모두 시도했어요':'나만의 문장을 말해 보세요', locked:n>=10})
   + foot(`<button class="cta" data-go="7" ${n?'':'disabled'}>확장학습 마치기</button>`);
 }
 
@@ -990,6 +1040,7 @@ function render(){
   const m=app.querySelector('.main'); if(m && same) m.scrollTop=prevTop;
   if(same){ const nf=[...app.querySelectorAll('[data-fb]')].filter(x=>!prevFb.has(x.dataset.fb)); if(nf.length){ const el=nf[nf.length-1]; requestAnimationFrame(()=>el.scrollIntoView({block:'nearest',behavior:'smooth'})); } }
   S._last=key;
+  if(playingT) markPlaying(playingT);
   document.getElementById('steps').innerHTML = `<li><button class="homebtn ${S.view==='home'?'on':''}" data-a="home"><span>⌂</span>코스 홈</button></li>` + (S.view==='app' ? `<li class="steps-unit">U${UNIT.order} Application</li>` + ['레슨 안내','가이드챗','피드백 확인','레슨 종료'].map((n,i)=>`<li><button class="${['intro','chat','result','done'][i]===S.app.stage?'on':''}" disabled><span>${i+1}</span>${n}</button></li>`).join('') : S.view==='home'
     ? UNITS.map((u,ui)=>`<li class="steps-unit">UNIT ${pad2(u.order)}. ${esc(u.title)}${({U01:' (비즈니스 샘플)',U02:' (데일리 샘플)'})[u.id]||''}</li>` + LESSONS.map((l,i)=> l.unitId===u.id ? `<li><button data-open="${i}"><span>${i+1}</span>${esc(l.coreTitle)}</button></li>` : '').join('') + `<li><button data-a="openapp" data-u="${ui}"><span>A</span>Application</button></li>`).join('')
     : `<li class="steps-unit">U${(UNITS.find(u=>u.id===L().unitId)||{order:''}).order} L${L().coreOrder} ${esc(L().coreTitle)}</li>` + STAGES.map((n,i)=>`<li><button class="${i===S.stage?'on':''}" data-go="${i}"><span>${i+1}</span>${n}</button></li>`).join(''));
@@ -997,7 +1048,9 @@ function render(){
   const tin=document.getElementById('tin');
   if(tin){
     tin.addEventListener('input',e=>{ const v=e.target.value; if(S.view==='app'){ S.app.typed=v; return; } if(S.stage===3){ S.ex.typed=v; syncCta(); } if(S.stage===6) S.exp.typed=v; });
-    tin.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); onText(); }});
+    const fitTin=()=>{ tin.style.height='auto'; tin.style.height=Math.min(tin.scrollHeight+2,122)+'px'; };
+    tin.addEventListener('input',fitTin); fitTin();
+    tin.addEventListener('keydown',e=>{ if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); onText(); }});
     if(focused) tin.focus();
   }
 }
@@ -1013,7 +1066,7 @@ document.addEventListener('click',e=>{
   if(d.blank!==undefined){ const k=d.blank; S.mode='text'; stopRec(true); render(); document.querySelector(`.blank-in[data-k="${k}"]`)?.focus(); return; }
   if(d.go!==undefined){ go(+d.go); return; }
   if(d.mode){ S.mode=d.mode; stopRec(true); render(); if(S.mode==='text') (document.querySelector('.blank-in')||document.getElementById('tin'))?.focus(); return; }
-  if(d.speak){ speak(d.speak); return; }
+  if(d.speak){ if(playingT===d.speak){ hush(); return; } speak(d.speak); return; }
   if(d.ko!==undefined){ S.g.ko[d.ko]=!S.g.ko[d.ko]; render(); return; }
   if(d.blur!==undefined){ S.g.blur[d.blur]=!S.g.blur[d.blur]; render(); return; }
   if(d.bm!==undefined){ const i=+d.bm; if(S.bm.has(i)){S.bm.delete(i); toast('저장을 취소했어요');} else {S.bm.add(i); toast('보관함에 저장했어요');} render(); return; }
@@ -1034,9 +1087,16 @@ document.addEventListener('click',e=>{
     case 'unit': { const u=+d.u, was=!!(S.unitOpen && S.unitOpen[u]); S.unitOpen={}; if(!was) S.unitOpen[u]=true; render(); } break;
     case 'noti': toast('새 알림이 없어요'); break;
     case 'relay': toast('프로토타입에서는 코스만 체험할 수 있어요'); break;
-    case 'back': openExit(); break;
+    case 'back':
+      /* 요약·결과 화면은 직전 단계로(모달 없음), 확장학습은 입력이 있을 때만 확인 */
+      if(S.view==='lesson' && S.stage===5){ go(4); break; }
+      if(S.view==='lesson' && S.stage===7){ go(6); break; }
+      if(S.view==='lesson' && S.stage===6){ openExit('summary'); break; }
+      if(S.view==='app' && S.app.stage==='result'){ S.app.stage='chat'; render(); scrollMain(); break; }
+      openExit(); break;
     case 'exitstay': closeExit(true); break;
-    case 'exitleave': closeExit(false); goHome(); break;
+    case 'exitleave': closeExit(false); if(S.exitKind==='intro') backToIntro(); else if(S.exitKind==='summary'){ S.exp.typed=''; S.exp.hint=false; go(5); } else goHome(); break;
+    case 'lessonstart': go(S.resume||1); break;
     case 'rec': toggleRec(); break;
     case 'send': onText(); break;
     case 'listenall': speak(L().dialog.map(x=>x.en).join(' ')); break;
@@ -1058,6 +1118,7 @@ document.addEventListener('click',e=>{
     case 'nextex': stopRec(true); if(S.ex.i<n-1){S.ex.i++; render(); speak(sentence(S.ex.i));} else go(4); break;
     case 'bko': S.b.ko=!S.b.ko; render(); break;
     case 'hint':
+      if(S.view==='lesson' && S.stage===1) break; /* 가이드챗 힌트는 누르고 있는 동안만 (pointer 이벤트에서 처리) */
       if(S.view==='app'){ appHint(); break; }
       if(S.stage===6){ S.exp.hint=!S.exp.hint; render(); break; }
       { const i=S.b.i;
@@ -1224,7 +1285,7 @@ function judge(t,text){
   return {status: p&&m ? 'success' : (p||m) ? 'review' : 'fail', pattern:p, meaning:m};
 }
 function openApp(ui){ stopRec(true); S.seq++; hush(); setUnit(ui==null?(S.ui||0):ui); S.view='app'; S.app=appState(); S._last=null; render(); document.querySelector('.main')?.scrollTo(0,0); }
-function appStartChat(){ const A=S.app; A.stage='chat'; A.start=Date.now(); A.queue=segment(-1); render(); appPump(); }
+function appStartChat(){ const A=S.app; if(A.log.length){ A.stage='chat'; render(); scrollMain(); if(!A.awaiting && !A.finished) appPump(); return; } A.stage='chat'; A.start=Date.now(); A.queue=segment(-1); render(); appPump(); }
 function appPump(){
   const A=S.app, token=S.seq;
   if(S.view!=='app' || A.stage!=='chat') return;
@@ -1250,7 +1311,7 @@ function appSkip(){
   stopRec(true);
   if(A.awaiting){
     A.log.forEach(e=>e.fresh=false);
-    A.log.push({type:'line', text:'이 턴을 건너뛰었어요.'}); A.log.push({type:'answer', t:A.t});
+    A.log.push({type:'tfail', t:A.t, mode:'skip', fresh:true});
     speak(APP_TURNS[A.t].answer); resolveTurn({status:'fail', pattern:false, meaning:false}, '(건너뜀)');
     render(); scrollMain(); return;
   }
@@ -1263,7 +1324,7 @@ function appSkip(){
 }
 function appHint(){
   const A=S.app; if(!A.awaiting || A.hintUsed) return;
-  A.hintUsed=true; A.log.forEach(e=>e.fresh=false); A.log.push({type:'hint', t:A.t, fresh:true}); render(); scrollMain();
+  A.hintUsed=true; render(); scrollMain();
 }
 function appSubmit(text,voice){
   const A=S.app; if(!A.awaiting) return;
@@ -1274,10 +1335,9 @@ function appSubmit(text,voice){
   if(r.status==='success' || (A.attempt===1 && r.status==='review')) resolveTurn(r,text);
   else if(A.attempt===0){
     A.attempt=1;
-    if(!A.hintUsed){ A.hintUsed=true; A.log.push({type:'hint', t:A.t}); }
-    A.log.push({type:'line', text:'한 번 더 말해 보세요. 기회는 1번 남았어요.'});
+    A.hintUsed=true; /* 오답 시 힌트 자동 공개 → 타깃턴 버블 디렉션 영역에 표시 */
   } else {
-    A.log.push({type:'answer', t:A.t}); speak(APP_TURNS[A.t].answer); resolveTurn(r,text);
+    A.log.push({type:'tfail', t:A.t, mode:'fail'}); speak(APP_TURNS[A.t].answer); resolveTurn(r,text);
   }
   render(); scrollMain();
 }
@@ -1335,17 +1395,19 @@ function appChat(){
     }
     if(e.type==='hint') return `<div class="sysline ${fr}">${ic('bulb',14)}힌트 · <b>${esc(APP_TURNS[e.t].hint)}</b></div>`;
     if(e.type==='line') return `<div class="sysline">${esc(e.text)}</div>`;
-    if(e.type==='user') return `<div class="msg me ${fr}"><div style="display:flex;flex-direction:column;align-items:flex-end"><div class="bubble"><div class="en">${esc(e.text)}</div></div><span class="stchip st-${e.status}">${ic(ST_ICON[e.status],14)}${ST_LABEL[e.status]}${e.voice?'<span class="muted" style="font-weight:500"> · 인식된 문장(데모)</span>':''}</span></div></div>`;
+    if(e.type==='tfail'){ const T2=APP_TURNS[e.t], a=T2.answer; return `<div class="tbub ng ${fr}"><div class="krb">${esc(T2.ko)}</div><hr><div class="fbt">${ic('alert',16)}<span>${e.mode==='skip'?'이 턴을 건너뛰었어요. 정답 문장을 듣고 넘어가 볼게요.':'아쉬워요. 정답 문장을 듣고 다음 Task로 넘어가 볼게요.'}</span></div><div class="ansbox"><span class="lbl2">정답 문장</span><div class="ar"><b>${esc(a)}</b><button class="chip" data-speak="${esc(a)}" aria-label="정답 듣기">${ic('speaker',15)}</button></div></div></div>`; }
+    if(e.type==='user') return `<div class="msg me ${fr}"><div style="display:flex;flex-direction:column;align-items:flex-end"><div class="bubble ${e.status==='success'?'':'att-ng'}"><div class="en">${esc(e.text)}</div>${e.status==='success'?`<div class="ko">${esc(APP_TURNS[e.t].ko)}</div>`:''}</div><span class="stchip st-${e.status}">${ic(ST_ICON[e.status],14)}${ST_LABEL[e.status]}${e.voice?'<span class="muted" style="font-weight:500"> · 인식된 문장(데모)</span>':''}</span></div></div>`;
     if(e.type==='answer'){ const a=APP_TURNS[e.t].answer; return `<div class="sysmsg"><div class="sys-h">정답 문장</div><div class="sys-p" style="display:flex;align-items:center;justify-content:center;gap:8px"><span>${esc(a)}</span><button class="chip" data-speak="${esc(a)}" aria-label="정답 듣기">${ic('speaker',15)}</button></div></div>`; }
     return '';
   }).join('');
   const typing = A.typing ? `<div class="msg">${avatar}<div><div class="who">${esc(UNIT.aiName)}</div><div class="bubble">${dots}</div></div></div>` : '';
   const T=APP_TURNS[A.t];
-  const target = A.awaiting ? `<div class="target"><div class="hint-t">영어로 말해 보세요</div><div style="font-size:15px;font-weight:700;line-height:1.5">${esc(T.ko)}</div></div>` : '';
+  const target = A.awaiting ? `<div class="tbub white"><div class="dir">${A.attempt?'한 번 더 말해 보세요. 기회는 1번 남았어요.':'영어로 말해 보세요'}</div>${A.hintUsed?`<div class="hintl">${ic('bulb',13)}힌트 · ${esc(T.hint)}</div>`:''}<hr><div class="krb">${esc(T.ko)}</div></div>` : '';
   return head(UNIT.title,'Application')
     + `<div class="pin"><div style="font-size:11.5px;font-weight:800;color:var(--muted)">Mission</div><p style="font-size:13.5px;font-weight:700;color:var(--ink);margin-top:2px">${esc(UNIT.mission)}</p></div>`
     + `<div class="aprog"><div class="segs">${APP_TURNS.map((_,i)=>`<i class="${A.results[i]?'on':''}"></i>`).join('')}</div><span>Task ${done} / ${N}</span></div>`
-    + `<div class="main"><div class="chat">${log}${typing}${target}</div></div>`
+    + (()=>{ const aiIdx=A.log.filter(e=>e.type==='ai').map(e=>e.i); const allKo=aiIdx.length && aiIdx.every(i=>A.ko[i]); return `<div class="gctl"><div class="in"><button class="chip" data-a="applistenall">${ic('play',13,true)}전체 듣기</button><button class="chip ${allKo?'on':''}" data-a="appkoall" aria-pressed="${!!allKo}">전체 자막 보기</button></div></div>`; })()
+    + `<div class="main" style="padding-top:56px"><div class="chat">${log}${typing}${target}</div></div>`
     + dock({hint:true, hintDisabled:!A.awaiting||A.hintUsed, placeholder:'영어로 입력해 보세요', value:A.typed, voiceLabel:A.awaiting?'영어로 말해 보세요':'대화를 듣는 중이에요', locked:!A.awaiting})
     + foot(`<div class="row">${A.finished?'':`<button class="ghost" data-a="appskip">다음 &gt;&gt;</button>`}<button class="cta" data-a="appresult" ${A.finished?'':'disabled'}>결과보기</button></div>`);
 }
@@ -1427,6 +1489,8 @@ document.addEventListener('click',e=>{
   }
   else if(a==='appretry'){ openApp(S.ui); }
   else if(a==='appskip'){ appSkip(); }
+  else if(a==='applistenall'){ const t2=S.app.log.filter(x=>x.type==='ai').map(x=>APP_AI[x.i].en).join(' '); if(t2) speak(t2); }
+  else if(a==='appkoall'){ const A=S.app, idx=A.log.filter(x=>x.type==='ai').map(x=>x.i), all=idx.length && idx.every(i=>A.ko[i]); APP_AI.forEach((_,i)=>{ A.ko[i]=!all; }); render(); }
   else if(a==='appko'){ const i=+t.dataset.i; S.app.ko[i]=!S.app.ko[i]; render(); }
 });
 
@@ -1457,10 +1521,38 @@ function swEnd(e){
 document.addEventListener('pointerup',swEnd);
 document.addEventListener('pointercancel',e=>{ if(sw){ sw.el.style.transition=''; sw.el.style.transform=''; sw=null; } });
 
+/* ---------- Core 가이드챗 힌트: 누르고 있는 동안만 빈칸에 전체 텍스트를 흐릿하게 표시 ---------- */
+function gPeek(on){
+  if(S.view!=='lesson' || S.stage!==1 || S.g.done) return;
+  if(!!S.g.peek===on) return; S.g.peek=on;
+  const gb=document.getElementById('gblanks'); if(gb) gb.innerHTML=gBlanks();
+  const hb=document.querySelector('.hintbtn'); if(hb) hb.classList.toggle('hold',on);
+}
+document.addEventListener('pointerdown',e=>{ const hb=e.target.closest && e.target.closest('.hintbtn'); if(hb && !hb.disabled && S.view==='lesson' && S.stage===1){ e.preventDefault(); gPeek(true); } });
+['pointerup','pointercancel'].forEach(ev=>document.addEventListener(ev,()=>gPeek(false)));
+document.addEventListener('pointerout',e=>{ if(S.g && S.g.peek && e.target.closest && e.target.closest('.hintbtn') && !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest('.hintbtn'))) gPeek(false); });
+document.addEventListener('contextmenu',e=>{ if(e.target.closest && e.target.closest('.hintbtn')) e.preventDefault(); });
+
 /* ---------- exit confirm modal ---------- */
-function openExit(){
+function openExit(kind){
   stopRec(true); S.seq++; hush(); hideCol();
+  /* 인트로(레슨 안내)에서는 코스로 나가기, 본학습 모듈에서는 레슨 안내로 돌아가기 */
+  S.exitKind = kind || ((S.view==='lesson' && S.stage>=1) || (S.view==='app' && S.app.stage!=='intro') ? 'intro' : 'home');
+  const home=S.exitKind==='home';
+  document.getElementById('exit-t').textContent = home ? '학습을 종료하시겠어요?' : S.exitKind==='summary' ? '레슨 요약으로 돌아갈까요?' : '레슨 시작하기 페이지로 돌아갈까요?';
+  document.getElementById('exit-d').innerHTML = home ? '프로토타입에서는<br>학습 진행 상황이 저장되지 않아요' : '입력한 내용이 사라져요.';
   const m=document.getElementById('exitmodal'); m.hidden=false; m.querySelector('.mstay').focus();
+}
+/* 본학습 → 레슨 안내: 진행 상황(완료한 문항·대화·현재 모듈)은 유지, 제출하지 않은 입력만 비움 */
+function backToIntro(){
+  stopRec(true); S.seq++; hush();
+  if(S.view==='app'){ const A=S.app; A.typed=''; A.typing=false; A.stage='intro'; render(); document.querySelector('.main')?.scrollTo(0,0); return; }
+  S.resume=S.stage;
+  S.ex.typed=''; S.exp.typed=''; S.exp.hint=false;
+  if(!S.g.done) S.g.inp=[];
+  S.b.inp=S.b.inp.map((v,i)=>S.b.done[i]?v:[]); S.b.voiced=(S.b.voiced||[]).map((v,i)=>S.b.done[i]?v:false);
+  if(S.b.dirty) S.b.dirty=S.b.dirty.map(()=>false);
+  go(0);
 }
 function closeExit(resume){
   document.getElementById('exitmodal').hidden=true;
